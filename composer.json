@@ -1,0 +1,35 @@
+{
+    "name": "wuyj/laravel-comment",
+    "description": "User-Comment features for Laravel Application",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wuyj",
+            "email": "wuyj5@hotmail.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Wuyj\\LaravelComment\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "laravel/framework": "^5.5",
+        "mockery/mockery": "^1.2",
+        "phpunit/phpunit": "^6.2|^7.0",
+        "orchestra/testbench": "^3.5",
+        "orchestra/database": "^3.5"
+    },
+    "extra": {
+        "laravel": {
+            "providers": ["Wuyj\\LaravelComment\\CommentServiceProvider"]
+        }
+    }
+}
