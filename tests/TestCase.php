@@ -1,8 +1,9 @@
 <?php
+
 namespace Tests;
 
 
-use Illuminate\Contracts\Console\Kernel;
+use Orchestra\Database\ConsoleServiceProvider;
 use Wuyj\LaravelComment\CommentServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
@@ -16,7 +17,10 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
      */
     protected function getPackageProviders($app)
     {
-        return [CommentServiceProvider::class];
+        return [
+            CommentServiceProvider::class,
+            ConsoleServiceProvider::class,
+        ];
     }
 
     /**
@@ -41,7 +45,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->loadMigrationsFrom(__DIR__ . '/databases/migrations');
-        $this->loadMigrationsFrom(dirname(__DIR__) . '/databases/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+        $this->loadMigrationsFrom(dirname(__DIR__) . '/database/migrations');
     }
 }

@@ -4,54 +4,46 @@ namespace Wuyj\LaravelComment\Models;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Wuyj\LaravelComment\Contracts\CommentReplyInterface;
 
-class Comment extends Model
+class Comment extends Model implements CommentReplyInterface
 {
     protected $table = 'comments';
 
-    protected $fillable = [
-        'user_id',
-        'parent_id',
-        'title',
-        'content',
-        'related_id',
-        'related_type',
+    protected $guarded = [
+        'id',
+        'created_at',
+        'updated_at',
     ];
 
-    public function title($title)
+    /**
+     * @return MorphTo
+     */
+    public function creator()
     {
-        if ($title) {
-            $this->attributes['title'] = $title;
-        }
-        return $this;
+        return $this->morphTo('creator');
     }
 
-    public function content($content)
+    public function topic()
     {
-        if ($content) {
-            $this->attributes['content'] = $content;
-        }
-        return $this;
+        return $this->morphTo('topic');
     }
 
-    public function related($related_type, $related_id)
+    /**
+     * @param $data
+     *
+     * @return Model
+     */
+    public function addReply($data)
     {
-        $this->attributes['related_type'] = $related_type;
-        $this->attributes['related_id'] = $related_id;
-        return $this;
+        $comment = $this->replicate();
+        $comment->fill($data)->save();
+        return $comment;
     }
 
-    public function comment($title, $content)
+    public function getCommentId()
     {
-        $this->attributes['title'] = $title;
-        $this->attributes['content'] = $content;
-        return $this;
-    }
-
-    public function reply($title, $content)
-    {
-        $this->attributes['title'] = $title;
-        $this->attributes['content'] = $content;
-        return $this;
+        return $this->attributes['id'];
     }
 }
