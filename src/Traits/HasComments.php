@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Wuyj\LaravelComment\Traits;
+namespace Wuyj\LaravelTopicComment\Traits;
 
 
 trait HasComments
 {
     public function comments()
     {
-        return $this->morphMany(config('laravel-comment.model'), 'topic');
+        return $this->morphMany(config('laravel-topic-comment.model'), 'topic');
     }
 }

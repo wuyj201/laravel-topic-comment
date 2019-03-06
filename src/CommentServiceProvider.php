@@ -1,6 +1,6 @@
 <?php
 
-namespace Wuyj\LaravelComment;
+namespace Wuyj\LaravelTopicComment;
 
 
 use Illuminate\Support\ServiceProvider;
@@ -12,14 +12,14 @@ class CommentServiceProvider extends ServiceProvider
         $this->publishMigration();
 
         $this->publishes([
-            __DIR__ . '/../config/laravel-comment.php' => config_path('laravel-comment.php'),
+            __DIR__ . '/../config/laravel-topic-comment.php' => config_path('laravel-topic-comment.php'),
         ], 'config');
     }
 
     public function register()
     {
         $this->mergeConfigFrom(
-            dirname(__DIR__) . '/config/laravel-comment.php', 'laravel-comment'
+            dirname(__DIR__) . '/config/laravel-topic-comment.php', 'laravel-topic-comment'
         );
     }
 

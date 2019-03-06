@@ -4,10 +4,10 @@ namespace Tests;
 
 
 use Illuminate\Database\Eloquent\Model;
-use Wuyj\LaravelComment\Contracts\CommentTopicInterface;
-use Wuyj\LaravelComment\Models\Comment;
-use Wuyj\LaravelComment\Traits\CanComment;
-use Wuyj\LaravelComment\Traits\HasComments;
+use Wuyj\LaravelTopicComment\Contracts\CommentTopicInterface;
+use Wuyj\LaravelTopicComment\Models\Comment;
+use Wuyj\LaravelTopicComment\Traits\CanComment;
+use Wuyj\LaravelTopicComment\Traits\HasComments;
 
 /**
  * Class FeatureTest.

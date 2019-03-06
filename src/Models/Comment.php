@@ -1,11 +1,11 @@
 <?php
 
-namespace Wuyj\LaravelComment\Models;
+namespace Wuyj\LaravelTopicComment\Models;
 
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Wuyj\LaravelComment\Contracts\CommentReplyInterface;
+use Wuyj\LaravelTopicComment\Contracts\CommentReplyInterface;
 
 class Comment extends Model implements CommentReplyInterface
 {

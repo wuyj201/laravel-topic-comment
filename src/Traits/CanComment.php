@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Wuyj\LaravelComment\Traits;
+namespace Wuyj\LaravelTopicComment\Traits;
 
 
-use Wuyj\LaravelComment\Contracts\CommentReplyInterface;
-use Wuyj\LaravelComment\Contracts\CommentTopicInterface;
+use Wuyj\LaravelTopicComment\Contracts\CommentReplyInterface;
+use Wuyj\LaravelTopicComment\Contracts\CommentTopicInterface;
 
 trait CanComment
 {

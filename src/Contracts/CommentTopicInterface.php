@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Wuyj\LaravelComment\Contracts;
+namespace Wuyj\LaravelTopicComment\Contracts;
 
 
 use Illuminate\Database\Eloquent\Relations\MorphTo;

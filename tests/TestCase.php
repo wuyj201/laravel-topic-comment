@@ -4,7 +4,7 @@ namespace Tests;
 
 
 use Orchestra\Database\ConsoleServiceProvider;
-use Wuyj\LaravelComment\CommentServiceProvider;
+use Wuyj\LaravelTopicComment\CommentServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
