@@ -1,8 +1,8 @@
 <?php
 $header = <<<EOF
-This file is part of the overtrue/laravel-like.
+This file is part of the wuyj/laravel-topic-comment.
 
-(c) overtrue <anzhengchao@gmail.com>
+(c) wuyj <wuyj5@hotmail.com>
 
 This source file is subject to the MIT license that is bundled.
 EOF;
